@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Protection Community Project</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #2c5530;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a8d5ba;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c5530;
+            font-size: 2.5rem;
+        }
+
+        /* Week Cards */
+        .week-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #2c5530;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Info Section */
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h3 {
+            color: #2c5530;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .info-box ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 10px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c5530;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Soil Protection Community Project</h1>
+            <p>A 6-week initiative to raise awareness and take action for protecting our precious soil resources</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#project-overview">Project Overview</a></li>
+            <li><a href="#weekly-activities">Weekly Activities</a></li>
+            <li><a href="#soil-protection">Soil Protection</a></li>
+            <li><a href="#soil-pollution">Soil Pollution</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <section id="project-overview">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <p>Our community embarked on a 6-week journey to understand, protect, and raise awareness about soil conservation. Through a combination of research, fieldwork, and community engagement, we explored the importance of healthy soil and the threats it faces in our modern world.</p>
+            <p>This project brought together volunteers of all ages who shared a common concern for our environment and a desire to make a tangible difference in protecting our local soil resources for future generations.</p>
+        </div>
+    </section>
+
+    <section id="weekly-activities">
+        <div class="container">
+            <h2>Weekly Activities</h2>
+            <div class="week-cards">
+                <!-- Week 1 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="amma.jpg" alt="Surveying people">
+                    </div>
+                    <div class="card-content">
+                        <h3>Week 1: Community Survey</h3>
+                        <p>We began our project by conducting surveys to understand community awareness about soil protection. Our team engaged with over 200 residents, asking questions about their knowledge of soil health, conservation practices, and concerns about soil degradation.</p>
+                        <p>The survey revealed that while most people understood the importance of soil, few were aware of specific threats or conservation techniques they could implement in their own gardens and farms.</p>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="group4.jpg" alt="Cleaning activities">
+                    </div>
+                    <div class="card-content">
+                        <h3>Week 2: Cleaning Activities</h3>
+                        <p>During this week, we organized community clean-up events in areas where soil pollution was evident. Volunteers removed plastic waste, discarded chemicals, and other pollutants that could leach harmful substances into the soil.</p>
+                        <p>We collected over 500kg of waste from public parks, riverbanks, and vacant lots, preventing these materials from further contaminating our soil and groundwater.</p>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="three.jpg" alt="Field analysis">
+                    </div>
+                    <div class="card-content">
+                        <h3>Week 3: Field Analysis</h3>
+                        <p>Our team conducted detailed field analysis at various locations to assess soil health. We tested for pH levels, nutrient content, compaction, and signs of erosion or contamination.</p>
+                        <p>Using simple soil testing kits and working with local agricultural experts, we identified areas with nutrient-deficient soil and locations showing signs of chemical contamination from nearby industrial activities.</p>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="mom.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h3>Week 4: Follow-up Survey</h3>
+                        <p>After three weeks of activities and awareness campaigns, we conducted a follow-up survey to measure changes in community knowledge and attitudes toward soil protection.</p>
+                        <p>The results showed a significant increase in awareness, with 75% of respondents now able to identify at least three soil conservation methods compared to only 25% in our initial survey.</p>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="hands.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h3>Week 5: Data Analysis</h3>
+                        <p>We compiled and analyzed all the data collected from our surveys, field tests, and cleaning activities. This comprehensive analysis helped us identify the most pressing soil issues in our community.</p>
+                        <p>Our findings indicated that chemical runoff from residential lawns and improper waste disposal were the primary contributors to local soil degradation.</p>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="chelu.jpg">
+                    </div>
+                    <div class="card-content">
+                        <h3>Week 6: Documentation</h3>
+                        <p>In our final week, we compiled all our findings, photographs, and recommendations into a comprehensive report. This document will serve as a resource for the community and local government to implement long-term soil protection strategies.</p>
+                        <p>We also created educational materials, including brochures and this website, to ensure our work continues to raise awareness beyond the project timeline.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="soil-protection">
+        <div class="container">
+            <h2>How to Protect Soil</h2>
+            <div class="info-container">
+                <div class="info-box">
+                    <h3>Agricultural Practices</h3>
+                    <ul>
+                        <li>Practice crop rotation to maintain soil nutrients</li>
+                        <li>Use cover crops to prevent erosion</li>
+                        <li>Implement no-till farming methods</li>
+                        <li>Apply organic compost instead of chemical fertilizers</li>
+                        <li>Use integrated pest management to reduce pesticide use</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Urban & Residential Methods</h3>
+                    <ul>
+                        <li>Plant native vegetation to stabilize soil</li>
+                        <li>Use permeable paving to allow water infiltration</li>
+                        <li>Compost kitchen waste instead of sending to landfill</li>
+                        <li>Avoid overuse of lawn chemicals</li>
+                        <li>Properly dispose of household hazardous waste</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Community Actions</h3>
+                    <ul>
+                        <li>Support local conservation initiatives</li>
+                        <li>Participate in community clean-up events</li>
+                        <li>Advocate for soil-friendly policies</li>
+                        <li>Educate others about soil importance</li>
+                        <li>Support sustainable local agriculture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="soil-pollution">
+        <div class="container">
+            <h2>Causes of Soil Pollution</h2>
+            <div class="info-container">
+                <div class="info-box">
+                    <h3>Industrial Causes</h3>
+                    <ul>
+                        <li>Chemical spills and leaks from factories</li>
+                        <li>Improper disposal of industrial waste</li>
+                        <li>Mining activities releasing heavy metals</li>
+                        <li>Emissions from manufacturing processes</li>
+                        <li>Oil and fuel contamination</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Agricultural Causes</h3>
+                    <ul>
+                        <li>Overuse of chemical pesticides and herbicides</li>
+                        <li>Excessive application of synthetic fertilizers</li>
+                        <li>Improper irrigation causing salinization</li>
+                        <li>Livestock waste runoff</li>
+                        <li>Monoculture farming depleting nutrients</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>Urban & Residential Causes</h3>
+                    <ul>
+                        <li>Improper waste disposal and landfills</li>
+                        <li>Stormwater runoff carrying pollutants</li>
+                        <li>Use of road salt in winter months</li>
+                        <li>Leaking septic systems and sewage</li>
+                        <li>Construction site erosion and contamination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Project Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="mom.jpg" alt="Survey activity">
+                </div>
+                <div class="gallery-item">
+                    <img src="balachi.jpg">
+                </div>
+                <div class="gallery-item">
+                    <img src="amma.jpg" alt="Field analysis">
+                </div>
+                <div class="gallery-item">
+                    <img src="chelu.jpg" alt="Community engagement">
+                </div>
+                <div class="gallery-item">
+                    <img src="hands.jpg" alt="Team meeting">
+                </div>
+                <div class="gallery-item">
+                    <img src="group4.jpg" alt="Healthy soil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Soil Protection Community Project &copy; 2023 | Protecting Our Earth, One Grain at a Time</p>
+            <p>This website documents our 6-week initiative to raise awareness and take action for soil conservation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to cards when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
